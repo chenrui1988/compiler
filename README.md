@@ -16,73 +16,73 @@
 #### Program Grammar
 
 ##### Variable Type
-```  java
-s : String <- "abcd";
-x : Int;
-x : Int []; 
+ ```  java
+    s : String <- "abcd";
+    x : Int;
+    x : Int []; 
 ```
 ##### Variable Declaration
 ```  java
-y : Int ;
-x : Int -> 1;
+    y : Int ;
+    x : Int -> 1;
 ```
 ##### Assignment Statement
 ```  java
-x -> 1;
+    x -> 1;
 ```
 ##### If Statement
 ```  java
-if 
-    a < 2 
-then 
-    1 
-else 
-    factorial(a-1) + factorial(a-2)
-fi
+    if 
+        a < 2 
+    then 
+        1 
+    else 
+        factorial(a-1) + factorial(a-2)
+    fi
 ```
 ##### While Statement
 ```  java
-while i < size loop {
-
-} pool
+    while i < size loop {
+    
+    } pool
 ```
 ##### Let Statement
 ```  java
-let i : Int, small : Int in {
-
-} tel
+    let i : Int, small : Int in {
+    
+    } tel
 ```
 ##### System Declaration 
 ```  java
-out_string("> ");
-x <- in_int();
-out_int(x*2+(y-4));
+    out_string("> ");
+    x <- in_int();
+    out_int(x*2+(y-4));
 ```
 ##### Function Declaration 
 ```  java
-factorial(a: Int) : Int {
-
-}
+    factorial(a: Int) : Int {
+    
+    }
 ```
 ##### Class Declaration 
 ```  java
-class Main {
-
-}
+    class Main {
+    
+    }
 ```
 ##### A Program sample
 ```  java
-class Main {
-    s : String <- "abcd";
-    x : Int;
-    y : Int <- 10;
-    main () : Int {
-      x <- in_int();
-      out_string("test");
-      out_string(s);
-      out_int(x*2+(y-4))
-    };
-}
+    class Main {
+        s : String <- "abcd";
+        x : Int;
+        y : Int <- 10;
+        main () : Int {
+          x <- in_int();
+          out_string("test");
+          out_string(s);
+          out_int(x*2+(y-4))
+        };
+    }
 ```
 It's also has a main class in a file and a main function in a class, When compiler success, the program will run start by main function. The compiler can check the symbol scope, support function call, but now it can't support type check and It's not an object-oriented design
 
