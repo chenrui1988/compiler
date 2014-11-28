@@ -116,7 +116,7 @@ It's also has a main class in a file and a main function in a class, When compil
 
 #### Compilation Sequence
 
-![Alt text](http://pan.baidu.com/s/1kTJvmYV)
+![Alt text](http://d.pcs.baidu.com/thumbnail/8dfdac6cd27588a6599662a338fee29a?fid=2150734521-250528-406344211216901&time=1417179600&sign=FDTAER-DCb740ccc5511e5e8fedcff06b081203-2UjbiSBH%2BVWvBM9vXqpVFDpfOLI%3D&rt=sh&expires=2h&r=454594510&sharesign=unknown&size=c710_u500&quality=100)
 
 1. Uclib.c / Uncool.y syntax analyzer program scan the uncool code to generate syntax tree. The tree data is store in the nodeType strut. The nodeType strut is a tree data strut, It contains all syntax nodes and those relationship.
 2. Then we will call ex function in the Uncool.y, when complete scan code, you can see the call function code in the Uncool.y , lineno 70, It will be executed when complete scan.
