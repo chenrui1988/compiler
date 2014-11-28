@@ -4,11 +4,16 @@
 
 > This is a simple example to show how to use Lex/Yacc  to generate IA32 code
 
+## Overview
+
+* [Operating Environment](#user-content-operating-environment)
+* [Program Grammar](#variable-type)
+
 ####Operating Environment
 - OS X 10.9.2
 - Lex, Bison, Gcc
 
-#### The Program Grammar
+#### Program Grammar
 
 ##### Variable Type
 ```  java
@@ -82,23 +87,31 @@ class Main {
 It's also has a main class in a file and a main function in a class, When compiler success, the program will run start by main function. The compiler can check the symbol scope, support function call, but now it can't support type check and It's not an object-oriented design
 
 #### Using Help
-1. execute “make” command in code folder.
-    build Lex/Yacc, Will Generate uncool.pgm program
+1. build Lex/Yacc, Will Generate uncool.pgm program
+```  bash
+    make
+```
 2. parse the uc  to IA32 code, execute the command
- 	./uncool.pgm uncool.uc >uncool.s commender to
+```  bash
+ 	./uncool.pgm uncool.uc >uncool.s 
+```
 3. Assembly the IA32 code to executable program,execute the command
+```  bash
     gcc –m32 uncool.s –o uncool
-4. execute  “./uncool” , you will see the result of this program result.
-
+```
+4. execute the program you will see the result of this program result.
+```  bash
+    ./uncool
+```
 
 #### Code Files
-1. Uncool.l，Uncool.y, Uclib.h	
+1. Uncool.l，Uncool.y, Uclib.h  
     Lex/Yacc code common function and structure
-2. symbol_table.h symbol_table.c
+2. symbol_table.h symbol_table.c  
     symbol_table implement storage symbol in the LinkList
-3. stack.h stack.c
+3. stack.h stack.c  
     symbol_table stack implement store symbol_table in stack
-4. uccompiler.c 
+4. uccompiler.c  
     the main parse program, transition the Uc code to IA32 code
 
 #### The Compilation Sequence
