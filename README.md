@@ -1,13 +1,13 @@
 # Lex/Yacc Compiler
 
-@(Lex)[Yacc|IA32|OSX]
-
 > This is a simple example to show how to use Lex/Yacc  to generate IA32 code
 
 ## Overview
-
 * [Operating Environment](#user-content-operating-environment)
-* [Program Grammar](#variable-type)
+* [Program Grammar](#user-content-program-grammar)
+* [Using Help](#user-content-using-help)
+* [Code Files](#user-content-code-files)
+* [Compilation Sequence](#user-content-compilation-sequence)
 
 ####Operating Environment
 - OS X 10.9.2
@@ -114,18 +114,15 @@ It's also has a main class in a file and a main function in a class, When compil
 4. uccompiler.c  
     the main parse program, transition the Uc code to IA32 code
 
-#### The Compilation Sequence
+#### Compilation Sequence
 
-![Alt text](./1417180150702.png)
+![Alt text](http://pan.baidu.com/s/1kTJvmYV)
 
-1. Uclib.c / Uncool.y  -- Syntax Analyzer Program
-scan the uncool code to generate syntax tree. The tree data is store in the nodeType strut.
-The nodeType strut is a tree data strut, It contains all syntax nodes and those relationship.
+1. Uclib.c / Uncool.y syntax analyzer program scan the uncool code to generate syntax tree. The tree data is store in the nodeType strut. The nodeType strut is a tree data strut, It contains all syntax nodes and those relationship.
 2. Then we will call ex function in the Uncool.y, when complete scan code, you can see the call function code in the Uncool.y , lineno 70, It will be executed when complete scan.
 3. The ex function is in the uccompiler.c file, It was used transition the Uc code to IA32 code, It read all node in the syntax tree and transition the operation to IA32 code.
 4. The symbol_table and stack is used to record the program variables
-Stack.h, Stack.c has define a linked list data structure， It was used to store symbol_table. When The code run into the class , function or let code, we will generate a symbol_table data and put it into Stack, The head of Stack is the current scope of the symbol table, when run out the class, function or let code, we wil let symbol table out the stack and remove the class, function or let’s variable
-    symbol_table is a linked list data structure too, It is used to store current scope’s symbol variable, when we use a variable , or a function, we will find from here
+Stack.h, Stack.c has define a linked list data structure， It was used to store symbol_table. When The code run into the class , function or let code, we will generate a symbol_table data and put it into Stack, The head of Stack is the current scope of the symbol table, when run out the class, function or let code, we wil let symbol table out the stack and remove the class, function or let’s variable. symbol_table is a linked list data structure too, It is used to store current scope’s symbol variable, when we use a variable , or a function, we will find from here
 
 
 
